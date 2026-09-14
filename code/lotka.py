@@ -1,11 +1,3 @@
-"""Standalone reproducibility code for the accompanying Lotka--Volterra article v2.
-
-Two state schemes, their exact weighted gradients and Hessian-vector products.
-Tracking and effort use left endpoints; the positive state scheme supports
-both old-state and flux-aligned harvest valuation. No state clipping or
-finite-difference adjoint is used. This file implements the manuscript equations; it is not a downloaded
-copy of the author's public repository.
-"""
 from __future__ import annotations
 from dataclasses import dataclass
 from time import perf_counter
