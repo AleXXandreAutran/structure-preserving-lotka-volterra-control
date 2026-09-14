@@ -1,17 +1,8 @@
 # Lotka–Volterra optimal control
 
-Minimal reproducibility repository for the numerical methods used in the article **Structure-Preserving Discrete-Adjoint Optimization for Diffusive Lotka–Volterra Harvesting**.
+Numerical optimal control for a diffusive Lotka–Volterra predator–prey system.
 
-The code implements:
-
-- the IMEX state scheme;
-- the positive transfer-implicit state scheme;
-- left-endpoint and flux-aligned harvest objectives;
-- exact discrete adjoints;
-- tangent equations and Hessian-vector products;
-- L-BFGS-B, relaxed forward–backward sweep, Anderson acceleration, and spectral projected gradient;
-- matrix-free free-Hessian spectral estimates;
-- the numerical experiments and derivative tests used in the article.
+The repository includes IMEX and positivity-preserving schemes, exact discrete adjoints, Hessian-vector products, and several constrained optimization methods.
 
 ## Installation
 
@@ -27,13 +18,13 @@ python -m pip install -r requirements.txt
 python -m pytest -q code/test_v2.py
 ```
 
-## Run the experiments
+## Run
 
 ```bash
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python code/run_experiments.py
 ```
 
-Specific phases can be run separately:
+Individual experiment groups can be run with:
 
 ```bash
 python code/run_experiments.py --phase derivatives
@@ -44,17 +35,17 @@ python code/run_experiments.py --phase fixed
 python code/run_experiments.py --phase multistart
 ```
 
-The numerical outputs are written to `results/`.
+Results are saved in `results/`.
 
-## Generate the figures
+## Figures
 
 ```bash
 python code/make_figures.py
 ```
 
-The figures are written to `figures/`.
+Figures are saved in `figures/`.
 
-## Minimal example
+## Example
 
 ```python
 import sys
@@ -68,5 +59,3 @@ u, report = optimize(problem)
 print(report["objective"])
 print(report["residual"])
 ```
-
-The default parameters, initial data, and target profiles are those used in the reference experiment of the article.
