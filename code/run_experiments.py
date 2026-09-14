@@ -1,5 +1,4 @@
-"""Reproduce article v2. All reported values are computed by this script.
-
+"""
 Usage: OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python run_experiments.py
 Use --phase reference|derivatives|grids|coarse|fixed|multistart to run a subset.
 The optional --reuse flag preserves already computed reference solutions.
