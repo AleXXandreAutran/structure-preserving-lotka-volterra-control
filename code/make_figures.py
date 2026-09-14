@@ -1,4 +1,4 @@
-"""Plot only results produced by run_experiments.py; one axes per figure."""
+"""Plot only results produced by run_experiments.py"""
 from pathlib import Path
 import json
 import numpy as np
