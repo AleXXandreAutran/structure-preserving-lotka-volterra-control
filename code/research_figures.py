@@ -139,7 +139,7 @@ for label in ['imex', 'left', 'flux']:
     )
 axes[0].set_ylabel('temporal variation')
 axes[1].set_ylabel('common-reference objective')
-axes[2].set_ylabel('L² change after temporal refinement')
+axes[2].set_ylabel('L² distance to previous control\n(copied to the finer grid)')
 for ax in axes:
     ax.set_xlabel('time intervals N (M = 20)')
     ax.grid(alpha=0.2)
